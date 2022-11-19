@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { IAd } from '../interfaces/ad';
 
 @Component({
   selector: 'app-items',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsComponent implements OnInit {
 
-  constructor() { }
+    ads!:IAd[];
+
+
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.loadAds().subscribe({
+      next: (value) => {
+        this.ads = value;
+      }
+    });    
   }
 
 }
