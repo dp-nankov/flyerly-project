@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+input[type="text"] {
+    border: 2.5px solid #2b3238;
+    height:27.5px; 
+    width: 250px;
+    border-radius: 13px;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2.5px solid #a1ce55;
+    box-shadow: 0 0 7px #a1ce55; 
+}
+
+button, input[type="submit"] {
+    background-color: #a1ce55;
+    font-size: 32px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    color: #2b3238;
+    font-weight: bold;
+    padding: 4px 30px;
+    border-radius: 30px;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover{
+    color: white;
+    background-color: #476f02;
+}
+
+.glowing-text {
+    text-shadow: 0 0 10px #a1ce55;
+}
+
+main {
+    min-height: 60.5%;
+}
