@@ -1,47 +1,36 @@
-.item-icon-div { grid-area: img; }
-.item-info-div { grid-area: info; }
-.item-buttons-div { grid-area: buttons; }
-
 .item {
-    display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    width: 80%;
-    position: relative;
+    display: inline-block;
+    margin: 10px;
+    width: 20%;
     text-align: center;
     border: 3.5px solid #a1ce55;
     border-radius: 15px;
-    height: 20%;
+    height: 450px;
     padding: 10px;
-    grid-template-areas:
-    'img img img img info info info info info'
-    'img img img img info info info info info'
-    'img img img img info info info info info'
-    'img img img img buttons buttons buttons buttons buttons';
+    min-width: 320px;
 }
 
 .item-icon {
     object-fit: cover;
     height: 230px;
     width: 230px;
-    display: inline-block;
 }
 
 .item-info-div {
-    display: inline-block;
+    display: block;
     /* border: 3.5px solid #a1ce55; */
     margin: 3px;
+    height: 120px;
 }
 
 .item-icon-div {
-    display: inline-block;
+    display: block;
     /* border: 3.5px solid #a1ce55; */
     margin: 3px;
 }
 
 .item-buttons-div {
-    display: inline-block;
+    display: block;
     /* border: 3.5px solid #a1ce55; */
     margin: 3px;
 }
@@ -59,3 +48,7 @@
     padding: 5px 30px;
     margin-left: 10px;
 }
+
+
+
+
