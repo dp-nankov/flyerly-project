@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  selector: 'app-ad',
+  templateUrl: './ad.component.html',
+  styleUrls: ['./ad.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class AdComponent implements OnInit {
 
   @Input() title!: string;
   @Input() description!: string;

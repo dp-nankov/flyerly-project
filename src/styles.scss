@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
     border: 2.5px solid #2b3238;
     height:27.5px; 
     width: 250px;
@@ -18,7 +18,7 @@ input[type="text"] {
     font-weight: bold;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
     border: 2.5px solid #a1ce55;
     box-shadow: 0 0 7px #a1ce55; 

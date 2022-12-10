@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="loginHandler()">
+    <div class="form-group">
+        <input id="email" type="text" name="email" placeholder="E-mail" formControlName="email">
+    </div>
+    <p class="error" *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched">E-mail is required!</p>
+        <div class="form-group">
+            <input id="pass" type="password" name="pass" placeholder="Password" formControlName="password">
+        </div>
+        <p class="error" *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched">Password is required!</p>
+
+    <button [disabled]="form.invalid">Sign In</button>
+</form>

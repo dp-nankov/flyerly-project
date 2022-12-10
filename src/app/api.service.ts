@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { IAd } from './interfaces/ad';
+import { IAd } from './shared/interfaces/ad';
 
 const apiURL = environment.apiUrl;
 
