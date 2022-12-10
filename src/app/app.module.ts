@@ -7,18 +7,17 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GuestHomeComponent } from './guest-home/guest-home.component';
 import { AdsComponent } from './ads/ads.component';
-import { AdComponent } from './ad/ad.component';
+import { AdComponent } from './ads/ad/ad.component';
 import { LoadingInterceptor } from './core/loading.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AdsModule } from './ads/ads.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuestHomeComponent,
-    AdsComponent,
-    AdComponent,
     RegisterComponent,
     LoginComponent
   ],
@@ -26,6 +25,7 @@ import { LoginComponent } from './auth/login/login.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    AdsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="formHandler()">
+    <div class="form-group">
+        <input id="title" type="text" name="title" placeholder="Title" formControlName="title">
+    </div>
+    <p class="error" *ngIf="form.get('title')?.errors?.['required'] && form.get('title')?.touched">Title is required!</p>
+        <div class="form-group">
+            <input id="description" type="text" name="description" placeholder="Description" formControlName="description">
+        </div>
+    <p class="error" *ngIf="form.get('description')?.errors?.['required'] && form.get('description')?.touched">Password is required!</p>
+    <div class="form-group">
+        <input id="imgUrl" type="text" name="imgUrl" placeholder="Image URL" formControlName="imgUrl">
+    </div>
+<p class="error" *ngIf="form.get('imgUrl')?.errors?.['required'] && form.get('imgUrl')?.touched">Image URL is required!</p>
+
+    <button [disabled]="form.invalid">Create</button>
+</form>
