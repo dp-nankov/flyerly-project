@@ -9,6 +9,8 @@ import { GuestHomeComponent } from './guest-home/guest-home.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 import { LoadingInterceptor } from './core/loading.interceptor';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { LoadingInterceptor } from './core/loading.interceptor';
     GuestHomeComponent,
     ItemsComponent,
     ItemComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {
