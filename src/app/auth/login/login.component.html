@@ -1,12 +1,18 @@
-<form [formGroup]="form" (ngSubmit)="loginHandler()">
-    <div class="form-group">
-        <input id="email" type="text" name="email" placeholder="E-mail" formControlName="email">
-    </div>
-    <p class="error" *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched">E-mail is required!</p>
+<section id="login-form">
+    <form [formGroup]="form" (ngSubmit)="loginHandler()">
         <div class="form-group">
-            <input id="pass" type="password" name="pass" placeholder="Password" formControlName="password">
+            <input id="email" [ngClass]="{'red' : form.get('email')?.errors && form.get('email')?.touched}" type="text"
+                name="email" placeholder="E-mail" formControlName="email">
+            <p class="error" *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched">E-mail is
+                required!</p>
         </div>
-        <p class="error" *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched">Password is required!</p>
+        <div class="form-group">
+            <input id="pass" [ngClass]="{'red' : form.get('password')?.errors && form.get('password')?.touched}"
+                type="password" name="pass" placeholder="Password" formControlName="password">
+            <p class="error" *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched">
+                Password is required!</p>
+        </div>
 
-    <button [disabled]="form.invalid">Sign In</button>
-</form>
+        <button [disabled]="form.invalid">Sign In</button>
+    </form>
+</section>
