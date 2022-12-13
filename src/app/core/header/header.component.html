@@ -7,8 +7,8 @@
             <li><a [routerLink]="['']" class="active">Home</a></li>
             <li><a [routerLink]="['ads']">Ads</a></li>
             <li><a [routerLink]="['create']">New Ad</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Contact</a></li>
+            <li *ngIf="router.url != '/home'"><a [routerLink]="['login']">Login</a></li>
+            <li *ngIf="router.url != '/home'"><a [routerLink]="['register']">Register</a></li>
         </ul>
     </div>
   </section>

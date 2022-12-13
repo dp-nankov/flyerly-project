@@ -13,13 +13,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AdsModule } from './ads/ads.module';
+import { RouterModule } from '@angular/router';
+import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuestHomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +32,11 @@ import { AdsModule } from './ads/ads.module';
     AdsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [
+    appInterceptorProvider,
     {
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
     }

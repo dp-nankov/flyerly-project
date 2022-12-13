@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { sameValueGroupValidator } from 'src/app/shared/validators/same-value-group-validator';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -22,14 +24,21 @@ export class RegisterComponent implements OnInit {
     })
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  registerHandler(){
-    console.log(this.form.value); 
+  registerHandler() {
+    if (this.form.invalid) { return; }
+    const {firstName, lastName, email, username, pass: {password} = {}} = this.form.value;
+    this.authService.register(firstName!, lastName!, email!, username!, password!)
+    .subscribe(user => {
+      this.authService.user = user;
+      this.router.navigate(['/home'])
+    }
+    )
   }
-    
-  
-}
+
+
+  }
