@@ -7,52 +7,67 @@ import { LoginComponent } from './auth/login/login.component';
 import { CreateComponent } from './ads/create/create.component';
 import { NotFoundComponent } from './not-found/not-found/not-found.component';
 import { AuthActivate } from './shared/guards/auth.activate';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { ErrorComponent } from './core/error/error.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: GuestHomeComponent
+    component: GuestHomeComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Flyerly',
+      loginRequired: false
+    }
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'ads',
     component: AdsComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   title: 'Ads',
-    //   loginRequired: false
-    // }
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Ads',
+      loginRequired: true
+    }
   },
   {
     path: 'register',
     component: RegisterComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   title: 'Register',
-    //   loginRequired: false
-    // }
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Register',
+      loginRequired: false
+    }
   },
   {
     path: 'login',
     component: LoginComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   title: 'Login',
-    //   loginRequired: false
-    // }
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Login',
+      loginRequired: false
+    }
   },
   {
     path: 'create',
     component: CreateComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   title: 'Create',
-    //   loginRequired: false
-    // }
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Create',
+      loginRequired: true
+    }
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   },
   {
     path: '404',
@@ -62,6 +77,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '404'
   }
+  
 ];
 
 @NgModule({

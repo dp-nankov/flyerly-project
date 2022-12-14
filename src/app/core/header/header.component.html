@@ -4,11 +4,11 @@
             <h1>Flyerly</h1>
         </a>
         <ul>
-            <li><a [routerLink]="['']" class="active">Home</a></li>
             <li><a [routerLink]="['ads']">Ads</a></li>
-            <li><a [routerLink]="['create']">New Ad</a></li>
-            <li *ngIf="router.url != '/home'"><a [routerLink]="['login']">Login</a></li>
-            <li *ngIf="router.url != '/home'"><a [routerLink]="['register']">Register</a></li>
+            <li *ngIf="authService.isLoggedIn == true"><a [routerLink]="['create']">New Ad</a></li>
+            <li *ngIf="authService.isLoggedIn == true"><a [routerLink]="['logout']">Logout</a></li>
+            <li *ngIf="authService.isLoggedIn == false"><a [routerLink]="['login']">Login</a></li>
+            <li *ngIf="authService.isLoggedIn == false"><a [routerLink]="['register']">Register</a></li>
         </ul>
     </div>
   </section>

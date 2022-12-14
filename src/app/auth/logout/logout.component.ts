@@ -12,11 +12,9 @@ export class LogoutComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { 
     this.authService.logout().subscribe({
       next: () => {
-        this.authService.user = null;
         this.router.navigate(["/login"])
       },
       error: () => {
-        this.authService.user = null;
         this.router.navigate(["/login"])
       }
     })
