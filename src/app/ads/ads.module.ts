@@ -4,6 +4,8 @@ import { AdComponent } from './ad/ad.component';
 import { AdsComponent } from './ads.component';
 import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,12 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AdComponent,
     AdsComponent,
-    CreateComponent
+    CreateComponent,
+    DetailsComponent
     
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class AdsModule { }

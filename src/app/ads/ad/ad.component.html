@@ -1,13 +1,12 @@
 <div class="item">
     <div class="item-icon-div">
-        <img class="item-icon" src="{{imgSrc}}">
+        <img class="item-icon" [src]='imgUrl'>
     </div>
     <div class="item-info-div">
-        <h2>{{title}}</h2>
+        <a [routerLink]="['details/' + customId]"><h2>{{title}}</h2></a>
         <p>{{description}}</p>
     </div>
     <div class="item-buttons-div">
-        <button>Details</button>
         <button>Like</button>
     </div>
 </div>

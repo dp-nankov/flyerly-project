@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit {
   form = this.fb.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
+    price: ['', Validators.required],
     imgUrl: ['', Validators.required],
   });
 
@@ -23,8 +24,8 @@ export class CreateComponent implements OnInit {
 
   formHandler(){
     if (this.form.invalid) { return; }
-    const {title, description, imgUrl} = this.form.value;
-    this.adsService.create(title!, description!, imgUrl!)
+    const {title, description, price, imgUrl} = this.form.value;
+    this.adsService.create(title!, description!, price!, imgUrl!)
     .subscribe(ads => {
       this.router.navigate(['/ads'])
     }

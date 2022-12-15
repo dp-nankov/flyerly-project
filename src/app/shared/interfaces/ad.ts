@@ -1,5 +1,9 @@
 export interface IAd {
     title: string,
     description: string,
-    imgSrc: string
+    price:string,
+    imgUrl: string,
+    created_at: string,
+    updatedAt: string,
+    userId: string
 }

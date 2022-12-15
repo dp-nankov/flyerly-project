@@ -4,10 +4,18 @@
         <input id="title" [ngClass]="{'red' : form.get('title')?.errors && form.get('title')?.touched}" type="text" name="title" placeholder="Title" formControlName="title">
         <p class="error" *ngIf="form.get('title')?.errors?.['required'] && form.get('title')?.touched">Title is required!</p>
     </div>
-        <div class="form-group">
-            <input id="description" [ngClass]="{'red' : form.get('description')?.errors && form.get('description')?.touched}" type="text" name="description" placeholder="Description" formControlName="description">
-            <p class="error" *ngIf="form.get('description')?.errors?.['required'] && form.get('description')?.touched">Password is required!</p>
-        </div>
+    <div class="form-group">
+        <input id="description" [ngClass]="{'red' : form.get('description')?.errors && form.get('description')?.touched}"
+            type="text" name="description" placeholder="Description" formControlName="description">
+        <p class="error" *ngIf="form.get('description')?.errors?.['required'] && form.get('description')?.touched">Description
+            is required!</p>
+    </div>
+    <div class="form-group">
+        <input id="price" [ngClass]="{'red' : form.get('price')?.errors && form.get('price')?.touched}"
+            type="text" name="price" placeholder="Price" formControlName="price">
+        <p class="error" *ngIf="form.get('price')?.errors?.['required'] && form.get('price')?.touched">Price
+            is required!</p>
+    </div>
     <div class="form-group">
         <input id="imgUrl" [ngClass]="{'red' : form.get('imgUrl')?.errors && form.get('imgUrl')?.touched}" type="text" name="imgUrl" placeholder="Image URL" formControlName="imgUrl">
         <p class="error" *ngIf="form.get('imgUrl')?.errors?.['required'] && form.get('imgUrl')?.touched">Image URL is required!</p>

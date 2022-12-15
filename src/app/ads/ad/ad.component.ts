@@ -9,7 +9,9 @@ export class AdComponent implements OnInit {
 
   @Input() title!: string;
   @Input() description!: string;
-  @Input() imgSrc!: string;
+  @Input() imgUrl!: string;
+  @Input() price!: string;
+  @Input() customId!: string;
   
   constructor() { }
 

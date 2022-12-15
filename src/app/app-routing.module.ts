@@ -10,6 +10,7 @@ import { AuthActivate } from './shared/guards/auth.activate';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { ErrorComponent } from './core/error/error.component';
 import { MyProfileComponent } from './profile/my-profile/my-profile.component';
+import { DetailsComponent } from './ads/details/details.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       title: 'Flyerly',
       loginRequired: false
     }
+  },
+  {
+    path: 'ads/details/:detailId',
+    component: DetailsComponent,
   },
   {
     path: 'logout',

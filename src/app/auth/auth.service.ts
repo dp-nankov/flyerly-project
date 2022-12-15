@@ -50,6 +50,10 @@ export class AuthService implements OnDestroy{
     );
   }
 
+  getUser(userId: string | null){
+    return this.http.get<IUser>('/api/users/profile/' + userId)
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

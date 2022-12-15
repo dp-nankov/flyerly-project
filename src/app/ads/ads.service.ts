@@ -17,9 +17,10 @@ export class AdsService {
     return this.httpClient.get<IAd[]>(`${apiURL}/ads`);
   };
 
-  create(title: string, description: string, imgUrl: string) {
-    return this.httpClient.post<IAd[]>(`/api/ads`, {title, description, imgUrl})
-    
+  create(title: string, description: string, price: string, imgUrl: string) {
+    return this.httpClient.post<IAd[]>(`/api/ads`, {title, description, price, imgUrl})
   }
-
+  getAdCustom(customId: string | null){
+    return this.httpClient.get<IAd[]>(`${apiURL}/ads/custom/` + customId);
+  };
 }
