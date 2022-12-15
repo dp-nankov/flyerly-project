@@ -19,7 +19,7 @@
 .item-info-div {
     display: block;
     /* border: 3.5px solid #a1ce55; */
-    margin: 3px;
+    margin: 1px;
     height: 120px;
 }
 
@@ -32,7 +32,7 @@
 .item-buttons-div {
     display: block;
     /* border: 3.5px solid #a1ce55; */
-    margin: 3px;
+    margin: 1px;
 }
 
 .item-info-div p {
@@ -44,11 +44,23 @@
 }
 
 .item-buttons-div button {
-    font-size: 27px;
-    padding: 5px 30px;
+    font-size: 24px;
+    padding: 1px 25px;
     margin-left: 10px;
 }
+a{
+    color: #2b3238;
+    text-decoration: none;    
+}
 
+a:hover{
+    text-decoration: underline;
+    color: #a1ce55;
+}
 
-
-
+#price{
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    color: #2b3238;
+    font-weight: bold;
+    font-size: 21px;
+}
