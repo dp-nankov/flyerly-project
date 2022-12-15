@@ -6,6 +6,7 @@
         <ul>
             <li><a [routerLink]="['ads']">Ads</a></li>
             <li *ngIf="authService.isLoggedIn == true"><a [routerLink]="['create']">New Ad</a></li>
+            <li *ngIf="authService.isLoggedIn == true"><a [routerLink]="['my-profile']">My Profile</a></li>
             <li *ngIf="authService.isLoggedIn == true"><a [routerLink]="['logout']">Logout</a></li>
             <li *ngIf="authService.isLoggedIn == false"><a [routerLink]="['login']">Login</a></li>
             <li *ngIf="authService.isLoggedIn == false"><a [routerLink]="['register']">Register</a></li>

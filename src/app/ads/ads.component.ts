@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { AdsService } from './ads.service';
 import { IAd } from '../shared/interfaces/ad';
 
 @Component({
@@ -12,10 +12,10 @@ export class AdsComponent implements OnInit {
     ads!:IAd[];
 
 
-  constructor(private apiService:ApiService) { }
+  constructor(private adsService:AdsService) { }
 
   ngOnInit(): void {
-    this.apiService.loadAds().subscribe({
+    this.adsService.loadAds().subscribe({
       next: (value) => {
         this.ads = value;
       }

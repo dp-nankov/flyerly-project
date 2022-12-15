@@ -3,5 +3,9 @@ export interface IUser {
     lastName: string,
     email: string,
     username: string,
-    password: string
+    password: string,
+    created_at:string,
+    ads: [],
+    comments:[],
+    _id:[]
 }

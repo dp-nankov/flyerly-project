@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found/not-found.component';
 import { AuthActivate } from './shared/guards/auth.activate';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { ErrorComponent } from './core/error/error.component';
+import { MyProfileComponent } from './profile/my-profile/my-profile.component';
 
 const routes: Routes = [
   {
@@ -26,12 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'ads',
-    component: AdsComponent,
-    canActivate: [AuthActivate],
-    data: {
-      title: 'Ads',
-      loginRequired: true
-    }
+    component: AdsComponent
   },
   {
     path: 'register',
@@ -57,6 +53,15 @@ const routes: Routes = [
     canActivate: [AuthActivate],
     data: {
       title: 'Create',
+      loginRequired: true
+    }
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'My Profile',
       loginRequired: true
     }
   },

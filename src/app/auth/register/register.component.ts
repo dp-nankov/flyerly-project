@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     const {firstName, lastName, email, username, pass: {password} = {}} = this.form.value;
     this.authService.register(firstName!, lastName!, email!, username!, password!)
     .subscribe(user => {
-      this.router.navigate(['/home'])
+      this.router.navigate(['/ads'])
     }
     )
   }
