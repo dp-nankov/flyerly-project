@@ -1,3 +1,3 @@
 <section id="comments">
-<app-comment *ngFor="let c of comments" [userId] = "c.userId" [text]="c.text" [commentId] = "c._id" [adId] = "c.adId"></app-comment>
+<app-comment *ngFor="let c of comments" [cdate]="c.created_at" [userId] = "c.userId" [text]="c.text" [commentId] = "c._id" [adId] = "c.adId"></app-comment>
 </section>

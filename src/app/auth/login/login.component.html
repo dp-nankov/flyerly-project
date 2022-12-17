@@ -14,5 +14,6 @@
         </div>
 
         <button [disabled]="form.invalid">Sign In</button>
+        <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
     </form>
 </section>

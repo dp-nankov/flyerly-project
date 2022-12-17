@@ -22,5 +22,6 @@
         </div>
     
         <button [disabled]="form.invalid">Edit</button>
+        <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
     </form>
     </section>

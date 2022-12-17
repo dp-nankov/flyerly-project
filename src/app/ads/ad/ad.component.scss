@@ -21,6 +21,7 @@
     /* border: 3.5px solid #a1ce55; */
     margin: 1px;
     height: 120px;
+    padding: 0px;
 }
 
 .item-icon-div {
@@ -59,8 +60,32 @@ a:hover{
 }
 
 #price{
-    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
     color: #2b3238;
     font-weight: bold;
     font-size: 21px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.date-box{
+    margin-top: 1px;
+    padding: 0px;
+}
+
+.inline{
+    display: inline-block;
+    margin: 0px;
+}
+
+p{
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+}
+
+.date-label{
+    font-weight: bold;
+}
+
+.date{
+    font-style: italic;
+    margin-left: 3px;
 }

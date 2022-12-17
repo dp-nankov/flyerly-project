@@ -54,5 +54,6 @@
         </ng-container>
 
         <button [disabled]="form.invalid">Sign Up</button>
+        <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
     </form>
 </section>

@@ -11,6 +11,9 @@ const apiURL = environment.apiUrl;
 })
 export class AdsService {
 
+  isFromHome: boolean = false;
+  textFromHome: string | null | undefined = "";
+
   constructor(private httpClient: HttpClient) { }
 
   loadAds(){
@@ -29,5 +32,16 @@ export class AdsService {
 
   delete(adId: string){
     return this.httpClient.delete('/api/ads/' + adId)
+  }
+
+  setSearchBar(){
+    if(this.isFromHome){
+      const text = this.textFromHome;
+      this.textFromHome = ""
+      this.isFromHome = false;
+      return text;
+    }else{
+      return "";
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 import { IAd } from 'src/app/shared/interfaces/ad';
 import { AdsService } from '../ads.service';
 
@@ -14,6 +15,7 @@ export class EditComponent implements OnInit {
   
 
   constructor(private fb: FormBuilder, private adsService: AdsService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  errorMsg!:string | undefined;
 
   public customId!: string | null;
   ad!: IAd[];
@@ -55,12 +57,20 @@ export class EditComponent implements OnInit {
   }
 
   formHandler(){
+    this.errorMsg = undefined;    
     if (this.form.invalid) { return; }
     const {title, description, price, imgUrl} = this.form.value;
     const adId = this._id;
     this.adsService.edit(title!, description!, price!, imgUrl!, adId!)
+    .pipe(
+      catchError(error => {
+          this.errorMsg = "Invalid data!"
+          return of([]);
+      }))
     .subscribe(ads => {
+      if(!this.errorMsg){
       this.router.navigate(['/ads/details/' + this.customId])
+      }
     }
     )
   }

@@ -1,11 +1,69 @@
-.comment-card{
-    margin-top: 5px;
-    margin-bottom: 5px;
+#comment-section{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-bottom: 15px;
+    overflow: hidden;
+    z-index: 1;
 }
+
+.comment-card{
+    margin: auto;
+    border: 3.5px solid #a1ce55;
+    border-radius: 15px;
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+
+}
+
 p{
     font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
 }
 
 .username{
     font-weight: bold;
+    font-size: 18px;
+}
+
+.cdate{
+    display: inline-block;
+    font-size: 13px;
+    font-style: italic;
+    margin-left: 10px;
+}
+#deleteBtn{
+    display: inline-block;
+    font-size: 16px;
+    color:red;
+}
+
+#deleteBtn:hover{
+    color: rgb(119, 3, 3);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.username-box{
+    text-align: left;
+    padding-left: 16px;
+    display: inline-block;
+    width: 45%;
+}
+.date-box{
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+}
+.comment-text{
+    margin: 0px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.deleted{
+    color: red;
+    font-style: italic;
 }

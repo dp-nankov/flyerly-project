@@ -21,11 +21,10 @@
             <p class="p-value">{{createdAt}}</p>
         </div>
         <div class="info-card">
-            <p class="p-label">Ads:</p>
-            <p class="p-value">{{adsCount}}</p>
+            <p class="p-label">My ads:</p>
         </div>
     </div>
-    <app-ad *ngFor="let a of myAds" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
+    <app-ad *ngFor="let a of myAds" [cdate]="a.created_at" [udate]="a.updatedAt" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
 
     
 </section>

@@ -26,7 +26,7 @@
             <p class="p-value">{{username}}</p>
         </div>
         <div class="edit-ad" *ngIf="isOwner">
-        <a [routerLink]="['/ads/edit/' + customId]">Edit</a>
+        <a [routerLink]="['/ads/edit/' + customId]" class="edit-btn">Edit</a>
         <a (click)="deleteAd()">Delete</a>
         </div>
     </div>
@@ -35,10 +35,9 @@
 <section id="comment-form">
     <form [formGroup]="form2" (ngSubmit)="formHandler()">
         <div class="form-group">
-            <input id="text" [ngClass]="{'red' : form2.get('text')?.errors && form2.get('text')?.touched}" type="text" name="text" placeholder="Comment" formControlName="text">
-            <p class="error" *ngIf="form2.get('text')?.errors?.['required'] && form2.get('text')?.touched">This field can't be empty!</p>
+            <textarea id="text" class="text-area" [ngClass]="{'red' : form2.get('text')?.errors && form2.get('text')?.touched}" type="text" name="text" placeholder="Comment" formControlName="text"></textarea>
         </div>
-        <button [disabled]="form2.invalid">Post</button>
+        <button [disabled]="form2.invalid" class="commentBtn">Post</button>
     </form>
 </section>
 <app-comments [comments]="comments" [adId] = "_id" ></app-comments>

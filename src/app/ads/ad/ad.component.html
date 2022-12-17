@@ -1,12 +1,19 @@
 <div class="item">
     <div class="item-icon-div">
-        <a [routerLink]="['/ads/details/' + customId]"><img class="item-icon" [src]='imgUrl'></a>
+        <a *ngIf="user" [routerLink]="['/ads/details/' + customId]"><img class="item-icon" [src]='imgUrl'></a>
+        <a *ngIf="!user"><img class="item-icon" [src]='imgUrl'></a>
     </div>
     <div class="item-info-div">
-        <a [routerLink]="['/ads/details/' + customId]"><h2>{{title}}</h2></a>
+        <a *ngIf="user" [routerLink]="['/ads/details/' + customId]"><h2>{{title}}</h2></a>
+        <a *ngIf="!user" [routerLink]="['/login']"><h2>{{title}}</h2></a>
         <p id="price">${{price}}</p>
     </div>
     <div class="item-buttons-div">
-        <button>Like</button>
+        <div class="date-box">
+        <p class="date-label inline">Uploaded: </p><p class="date inline">{{cdate.split("T")[0]}}</p>
+        </div>
+        <div class="date-box">
+        <p class="date-label inline">Last update: </p><p class="date inline">{{udate.split("T")[0]}}</p>
+        </div>
     </div>
 </div>

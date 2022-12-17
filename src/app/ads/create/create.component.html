@@ -22,5 +22,7 @@
     </div>
 
     <button [disabled]="form.invalid">Create</button>
+    <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
+
 </form>
 </section>

@@ -2,6 +2,6 @@
     <div id="home-search">
         <input type="text" name="searchTerm" [(ngModel)] ="searchTerm" (input)="search(searchTerm)">
     </div>
-    <app-ad *ngFor="let a of filteredAds | titleFilter: searchTerm" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
+    <app-ad *ngFor="let a of filteredAds | titleFilter: searchTerm" [cdate]="a.created_at" [udate]="a.updatedAt" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
     <p *ngIf ="filteredAds.length === 0">No ads to show.</p>
 </section>

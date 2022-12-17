@@ -13,7 +13,10 @@ export class CommentComponent implements OnInit {
   @Input() text!: string;
   @Input() commentId!: string;
   @Input() adId!: string;
-
+  @Input() cdate!: string;
+  
+  date:string = "";
+  time:string = "";
   deleted: boolean = false;
 
   username!: string;
@@ -30,9 +33,15 @@ export class CommentComponent implements OnInit {
         if(owner === current){
           this.isOwner = true;
         }
-        console.log(this.isOwner);
         
+        setTimeout(()=>{
+          const date = new Date(this.cdate)
+          this.time = date.toLocaleTimeString().split(" ")[0]
+          this.date = date.toLocaleDateString().split(" ")[0]
+        },500)
       }
+
+      
   })
   }
 

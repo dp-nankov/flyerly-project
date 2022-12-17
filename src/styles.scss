@@ -18,6 +18,23 @@ input[type="text"], input[type="password"] {
     font-weight: bold;
 }
 
+textarea {
+    border: 2.5px solid #2b3238;
+    height:27.5px; 
+    width: 250px;
+    border-radius: 13px;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    font-weight: bold;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: 2.5px solid #a1ce55;
+    box-shadow: 0 0 7px #a1ce55; 
+}
+
 input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
     border: 2.5px solid #a1ce55;
@@ -49,3 +66,8 @@ main {
     min-height: 60.5%;
 }
 
+.server-error{
+    color: red;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    font-style: italic;
+}

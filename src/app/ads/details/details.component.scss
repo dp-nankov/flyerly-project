@@ -1,6 +1,8 @@
 #details{
     padding-top: 120px;
     text-align: center;
+    overflow: hidden;
+
 }
 
 p {
@@ -23,4 +25,32 @@ img {
 #comment-form{
     margin-top: 20px;
     text-align: center;
+}
+
+.text-area{
+    width: 30%;
+    height: 75px;
+    margin-top: 15px;
+}
+
+.commentBtn{
+    font-size: 18px;
+}
+
+a{
+    color: #2b3238;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    font-weight: bold;    
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #a1ce55;
+    cursor: pointer;
+}
+
+.edit-btn{
+    margin-right: 10px;
 }
