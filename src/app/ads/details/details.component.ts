@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { CommentsService } from 'src/app/comments/comments.service';
 import { IAd } from 'src/app/shared/interfaces/ad';
+import { IComment } from 'src/app/shared/interfaces/comment';
 import { IUser } from 'src/app/shared/interfaces/user';
 import { AdsService } from '../ads.service';
 
@@ -23,9 +26,16 @@ export class DetailsComponent implements OnInit {
   userId!: string | null;
   user!: IUser;
   username!:string;
+  _id!:string;
+  comments!:IComment[];
 
+  form2 = this.fb.group({
+    text: ['', Validators.required],
+  });
 
-  constructor(private adsService: AdsService, private activatedRoute: ActivatedRoute, private authService:AuthService) { }
+  public testComments:any = [{username: "Dnankov", comment: "dcvgbhhgfdcfvgbhgfdxcfvgbhgfg ghgfcvghgfcdg"},{username: "Kalinka", comment: "ghjkjhgfghjuytgfvbhjuygbnhjuygvbhjuygfvbhuytgfghy76t5rfghytf"}]
+
+  constructor(private router: Router, private commentsService: CommentsService, private adsService: AdsService, private activatedRoute: ActivatedRoute, private authService:AuthService,private fb: FormBuilder) { }
 
   async ngOnInit(): Promise<void> {
     this.customId = this.activatedRoute.snapshot.paramMap.get('detailId');
@@ -39,6 +49,7 @@ export class DetailsComponent implements OnInit {
         this.created_at = value[0].created_at.split('T')[0];
         this.updatedAt = value[0].updatedAt.split('T')[0];
         this.userId = value[0].userId;
+        this._id = value[0]._id;        
         
         this.authService.getUser(this.userId).subscribe({
           next: (value) => {
@@ -47,8 +58,28 @@ export class DetailsComponent implements OnInit {
           }
       })
       
+      this.commentsService.get(this._id).subscribe({
+        next: (value) => {
+          this.comments = value.reverse()
+          ;
+        }
+    })
       }
     });
 
+}
+
+formHandler(){
+  if (this.form2.invalid) { return; }
+    const {text} = this.form2.value;
+    const adId = this._id;
+    this.commentsService.create(text!, adId!)
+    .subscribe(() => {
+      this.router.navigate([this.router.url])
+      this.ngOnInit()
+      this.form2.reset()
+    }
+    )
+    
 }
 }

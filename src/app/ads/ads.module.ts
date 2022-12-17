@@ -6,6 +6,8 @@ import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule } from '@angular/router';
+import { CommentsModule } from '../comments/comments.module';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -14,13 +16,15 @@ import { RouterModule } from '@angular/router';
     AdComponent,
     AdsComponent,
     CreateComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditComponent
     
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    CommentsModule
   ]
 })
 export class AdsModule { }

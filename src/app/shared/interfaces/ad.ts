@@ -5,5 +5,6 @@ export interface IAd {
     imgUrl: string,
     created_at: string,
     updatedAt: string,
-    userId: string
+    userId: string,
+    _id: string
 }
