@@ -25,7 +25,10 @@
             <p class="p-label">Owner:</p>
             <p class="p-value">{{username}}</p>
         </div>
+        <div class="edit-ad" *ngIf="isOwner">
         <a [routerLink]="['/ads/edit/' + customId]">Edit</a>
+        <a (click)="deleteAd()">Delete</a>
+        </div>
     </div>
     
 </section>
@@ -38,4 +41,4 @@
         <button [disabled]="form2.invalid">Post</button>
     </form>
 </section>
-<app-comments [comments]="comments"></app-comments>
+<app-comments [comments]="comments" [adId] = "_id" ></app-comments>

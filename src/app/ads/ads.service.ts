@@ -26,4 +26,8 @@ export class AdsService {
   edit(title: string, description: string, price: string, imgUrl: string, adId: string) {
     return this.httpClient.put<IAd[]>(`/api/ads/edit/` + adId, {title, description, price, imgUrl})
   }
+
+  delete(adId: string){
+    return this.httpClient.delete('/api/ads/' + adId)
+  }
 }

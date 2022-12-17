@@ -25,7 +25,7 @@
             <p class="p-value">{{adsCount}}</p>
         </div>
     </div>
-    <div *ngFor="let a of myAds">
-        {{myAds.title}}
-    </div>
+    <app-ad *ngFor="let a of myAds" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
+
+    
 </section>

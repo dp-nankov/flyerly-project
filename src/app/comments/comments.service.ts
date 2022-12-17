@@ -16,4 +16,8 @@ export class CommentsService {
   get(_id: string) {
     return this.httpClient.get<IComment[]>(`/api/comments/` + _id)
   }
+
+  delete(adId: string, commentId:string){
+    return this.httpClient.delete(`/api/ads/${adId}/comments/${commentId}`)
+  }
 }

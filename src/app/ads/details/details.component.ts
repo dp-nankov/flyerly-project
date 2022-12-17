@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
   username!:string;
   _id!:string;
   comments!:IComment[];
+  isOwner: boolean = false;
 
   form2 = this.fb.group({
     text: ['', Validators.required],
@@ -38,6 +39,7 @@ export class DetailsComponent implements OnInit {
   constructor(private router: Router, private commentsService: CommentsService, private adsService: AdsService, private activatedRoute: ActivatedRoute, private authService:AuthService,private fb: FormBuilder) { }
 
   async ngOnInit(): Promise<void> {
+    
     this.customId = this.activatedRoute.snapshot.paramMap.get('detailId');
     this.adsService.getAdCustom(this.customId).subscribe({
       next: (value) => {
@@ -55,6 +57,11 @@ export class DetailsComponent implements OnInit {
           next: (value) => {
             this.user = value;
             this.username = value.username;
+            if(this.authService.user?._id === this.user._id){
+              this.isOwner = true;
+            }
+            console.log(this.isOwner);
+            
           }
       })
       
@@ -81,5 +88,15 @@ formHandler(){
     }
     )
     
+}
+
+deleteAd(){
+  this.adsService.delete(this._id).subscribe({
+    next: () => {
+      console.log('deleted');
+      this.router.navigate(['/ads'])
+    }
+})
+  
 }
 }

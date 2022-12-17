@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GuestHomeComponent,
     RegisterComponent,
     LoginComponent,
-    AuthenticateComponent
+    AuthenticateComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     CommonModule
+    
   ],
   providers: [
     appInterceptorProvider,

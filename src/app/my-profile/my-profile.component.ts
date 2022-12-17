@@ -26,7 +26,6 @@ export class MyProfileComponent implements OnInit {
       next: (value) => {
         this.myAds = value;
         console.log(this.myAds);
-        
       }
     });    
   }

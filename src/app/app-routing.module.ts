@@ -8,7 +8,7 @@ import { CreateComponent } from './ads/create/create.component';
 import { NotFoundComponent } from './not-found/not-found/not-found.component';
 import { AuthActivate } from './shared/guards/auth.activate';
 import { LogoutComponent } from './auth/logout/logout.component';
-import { MyProfileComponent } from './profile/my-profile/my-profile.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { DetailsComponent } from './ads/details/details.component';
 import { EditComponent } from './ads/edit/edit.component';
 

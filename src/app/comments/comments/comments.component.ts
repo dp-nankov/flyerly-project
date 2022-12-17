@@ -10,12 +10,12 @@ import { IComment } from 'src/app/shared/interfaces/comment';
 export class CommentsComponent implements OnInit {
 
   @Input() comments!: IComment[];
-
+  @Input() adId!: string;
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
   formHandler(){

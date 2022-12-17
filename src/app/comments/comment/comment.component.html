@@ -1,4 +1,9 @@
-<div class="comment-card">
+<div class="comment-card" *ngIf="!deleted">
     <p class="username">{{username}}</p>
     <p class="comment-text">{{text}}</p>
+    <a *ngIf="isOwner" (click)="onDelete()">Delete</a>
 </div>
+<div class="comment-card" *ngIf="deleted">
+    <p>Deleted</p>
+</div>
+
