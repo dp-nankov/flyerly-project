@@ -3,15 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { ErrorComponent } from './error/error.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SpinnerComponent,
-    ErrorComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -19,8 +17,8 @@ import { ErrorComponent } from './error/error.component';
   ],
   exports: [
     HeaderComponent,
-    SpinnerComponent,
-    ErrorComponent
+    SpinnerComponent
+    
   ]
 })
 export class CoreModule { }

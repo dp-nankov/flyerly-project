@@ -8,7 +8,6 @@ import { CreateComponent } from './ads/create/create.component';
 import { NotFoundComponent } from './not-found/not-found/not-found.component';
 import { AuthActivate } from './shared/guards/auth.activate';
 import { LogoutComponent } from './auth/logout/logout.component';
-import { ErrorComponent } from './core/error/error.component';
 import { MyProfileComponent } from './profile/my-profile/my-profile.component';
 import { DetailsComponent } from './ads/details/details.component';
 import { EditComponent } from './ads/edit/edit.component';
@@ -84,10 +83,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'error',
-    component: ErrorComponent
   },
   {
     path: '404',
