@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, catchError, filter, of, Subscription, tap } from 'rxjs';
+import { IAd } from '../shared/interfaces/ad';
 import { IUser } from '../shared/interfaces/user';
 
 @Injectable({
@@ -52,6 +53,10 @@ export class AuthService implements OnDestroy{
 
   getUser(userId: string | null){
     return this.http.get<IUser>('/api/users/profile/' + userId)
+  }
+
+  getMyAds(){
+    return this.http.get<IAd[]>('/api/users/profile/ads/placeholder')
   }
 
   ngOnDestroy(): void {

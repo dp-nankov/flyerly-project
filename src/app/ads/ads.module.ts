@@ -28,6 +28,9 @@ import { TitleFilterPipe } from '../shared/pipes/title-filter.pipe';
     RouterModule,
     CommentsModule,
     FormsModule
+  ],
+  exports: [
+    AdComponent
   ]
 })
 export class AdsModule { }

@@ -10,7 +10,7 @@ import { IAd } from '../shared/interfaces/ad';
 export class AdsComponent implements OnInit {
 
     ads!:IAd[];
-    filteredAds!:IAd[];
+    filteredAds:IAd[] = [];
     searchTerm = '';
     noResult = false;
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { IAd } from 'src/app/shared/interfaces/ad';
 
 @Component({
   selector: 'app-my-profile',
@@ -8,6 +9,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class MyProfileComponent implements OnInit {
 
+  myAds!:IAd[];
   user = this.authService.user;
   firstName = this.user?.firstName;
   lastName = this.user?.lastName;
@@ -20,8 +22,13 @@ export class MyProfileComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    console.log(this.user);
-    
+    this.authService.getMyAds().subscribe({
+      next: (value) => {
+        this.myAds = value;
+        console.log(this.myAds);
+        
+      }
+    });    
   }
 
 }
