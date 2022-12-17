@@ -11,6 +11,7 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { ErrorComponent } from './core/error/error.component';
 import { MyProfileComponent } from './profile/my-profile/my-profile.component';
 import { DetailsComponent } from './ads/details/details.component';
+import { EditComponent } from './ads/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,15 @@ const routes: Routes = [
     canActivate: [AuthActivate],
     data: {
       title: 'Create',
+      loginRequired: true
+    }
+  },
+  {
+    path: 'ads/edit/:adId',
+    component: EditComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Edit',
       loginRequired: true
     }
   },

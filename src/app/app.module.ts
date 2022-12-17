@@ -6,16 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GuestHomeComponent } from './guest-home/guest-home.component';
-import { AdsComponent } from './ads/ads.component';
-import { AdComponent } from './ads/ad/ad.component';
 import { LoadingInterceptor } from './core/loading.interceptor';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AdsModule } from './ads/ads.module';
 import { RouterModule } from '@angular/router';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,9 +29,9 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     CoreModule,
     AdsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [
     appInterceptorProvider,

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AdComponent } from './ad/ad.component';
 import { AdsComponent } from './ads.component';
 import { CreateComponent } from './create/create.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule } from '@angular/router';
 import { CommentsModule } from '../comments/comments.module';
 import { EditComponent } from './edit/edit.component';
+import { TitleFilterPipe } from '../shared/pipes/title-filter.pipe';
 
 
 
@@ -17,14 +18,16 @@ import { EditComponent } from './edit/edit.component';
     AdsComponent,
     CreateComponent,
     DetailsComponent,
-    EditComponent
+    EditComponent,
+    TitleFilterPipe
     
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    CommentsModule
+    CommentsModule,
+    FormsModule
   ]
 })
 export class AdsModule { }

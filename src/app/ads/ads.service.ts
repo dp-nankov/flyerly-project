@@ -23,4 +23,7 @@ export class AdsService {
   getAdCustom(customId: string | null){
     return this.httpClient.get<IAd[]>(`${apiURL}/ads/custom/` + customId);
   };
+  edit(title: string, description: string, price: string, imgUrl: string, adId: string) {
+    return this.httpClient.put<IAd[]>(`/api/ads/edit/` + adId, {title, description, price, imgUrl})
+  }
 }
