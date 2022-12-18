@@ -25,6 +25,11 @@ const routes: Routes = [
   {
     path: 'ads/details/:detailId',
     component: DetailsComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Flyerly',
+      loginRequired: true
+    }
   },
   {
     path: 'logout',
