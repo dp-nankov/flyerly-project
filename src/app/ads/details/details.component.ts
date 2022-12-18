@@ -99,7 +99,6 @@ formHandler(){
           return of([]);
       })) 
     .subscribe(() => {
-      this.router.navigate([this.router.url])
       this.ngOnInit()
       this.form2.reset()
     }
@@ -117,7 +116,6 @@ deleteAd(){
     })) 
   .subscribe({
     next: () => {
-      console.log('deleted');
       this.router.navigate(['/ads'])
     }
 })
