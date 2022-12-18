@@ -1,5 +1,5 @@
 #my-profile{
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -12,4 +12,11 @@ p {
 .p-label {
     font-weight: bold;
     margin-right: 8px;
+}
+
+.label p{
+    font-size: 26px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    color: #2b3238;
+    font-weight: bold;
 }

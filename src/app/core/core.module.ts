@@ -10,6 +10,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
   declarations: [
     HeaderComponent,
     SpinnerComponent
+    
   ],
   imports: [
     CommonModule,

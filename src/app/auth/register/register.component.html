@@ -1,4 +1,7 @@
 <section id="register-form">
+    <div class="label">
+        <p>Sign up</p>
+    </div>
     <form [formGroup]="form" (ngSubmit)="registerHandler()">
         <div class="form-group">
             <input id="first-name" [ngClass]="{'red' : form.get('firstName')?.errors && form.get('firstName')?.touched}"

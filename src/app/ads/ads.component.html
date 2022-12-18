@@ -1,7 +1,16 @@
 <section id="item-list">
+    <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
     <div id="home-search">
-        <input type="text" name="searchTerm" [(ngModel)] ="searchTerm" (input)="search(searchTerm)">
+        <input type="text" name="searchTerm" placeholder="Search" [(ngModel)]="searchTerm" (input)="search(searchTerm)">
+        <input type="number" placeholder="Price from:" name [(ngModel)]="searchPriceDown" (change)="searchPrice()"
+            (input)="searchPrice()">
+        <input type="number" placeholder="Price to:" name [(ngModel)]="searchPriceUp" (change)="searchPrice()"
+            (input)="searchPrice()">
     </div>
-    <app-ad *ngFor="let a of filteredAds | titleFilter: searchTerm" [cdate]="a.created_at" [udate]="a.updatedAt" [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price" [customId]="a.customId"></app-ad>
-    <p *ngIf ="filteredAds.length === 0">No ads to show.</p>
+    <app-ad *ngFor="let a of filteredAdsP | titleFilter: searchTerm" [cdate]="a.created_at" [udate]="a.updatedAt"
+        [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price"
+        [customId]="a.customId"></app-ad>
+    <div class="label">
+        <p *ngIf="filteredAds.length === 0 && loading == false">No ads to show.</p>
+    </div>
 </section>

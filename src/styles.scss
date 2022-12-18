@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
     border: 2.5px solid #2b3238;
     height:27.5px; 
     width: 250px;
@@ -35,7 +35,7 @@ textarea:focus {
     box-shadow: 0 0 7px #a1ce55; 
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
     outline: none;
     border: 2.5px solid #a1ce55;
     box-shadow: 0 0 7px #a1ce55; 
@@ -70,4 +70,15 @@ main {
     color: red;
     font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
     font-style: italic;
+}
+
+.label p{
+    font-size: 26px;
+    font-family: 'Roboto Condensed', 'Times New Roman', Times, serif;
+    color: #2b3238;
+    font-weight: bold;
+}
+
+.label{
+    text-align: center;
 }

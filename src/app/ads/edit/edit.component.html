@@ -1,4 +1,7 @@
 <section id="create-form">
+    <div class="label">
+        <p>Edit ad</p>
+    </div>
     <form [formGroup]="form" (ngSubmit)="formHandler()">
         <div class="form-group">
             <input id="title" [ngClass]="{'red' : form.get('title')?.errors && form.get('title')?.touched}" type="text" name="title" placeholder="Title" formControlName="title">

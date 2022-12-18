@@ -42,4 +42,20 @@ export class CreateComponent implements OnInit {
     )
   }
 
+  numberOnly(event: any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    
+    if(event.key == "." && this.form.value.price?.includes(".") == false){
+      return true;
+    }
+    if(this.form.value.price?.includes(".") && this.form.value.price?.split(".")[1].length > 1){
+      return false;
+    }
+    if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+      return false;
+    }
+    return true;
+
+  }
+
 }

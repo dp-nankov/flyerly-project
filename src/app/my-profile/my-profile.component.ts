@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { catchError, of } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IAd } from 'src/app/shared/interfaces/ad';
 
@@ -8,6 +9,7 @@ import { IAd } from 'src/app/shared/interfaces/ad';
   styleUrls: ['./my-profile.component.scss']
 })
 export class MyProfileComponent implements OnInit {
+  errorMsg!:string | undefined;
 
   myAds!:IAd[];
   user = this.authService.user;
@@ -22,7 +24,13 @@ export class MyProfileComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.getMyAds().subscribe({
+    this.authService.getMyAds()
+    .pipe(
+      catchError(error => {
+          this.errorMsg = error.message;
+          return of([]);
+      }))
+      .subscribe({
       next: (value) => {
         this.myAds = value;
         console.log(this.myAds);

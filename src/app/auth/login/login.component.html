@@ -1,4 +1,7 @@
 <section id="login-form">
+    <div class="label">
+        <p>Sign in</p>
+    </div>
     <form [formGroup]="form" (ngSubmit)="loginHandler()">
         <div class="form-group">
             <input id="email" [ngClass]="{'red' : form.get('email')?.errors && form.get('email')?.touched}" type="text"
