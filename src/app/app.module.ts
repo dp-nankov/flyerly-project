@@ -16,6 +16,7 @@ import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { TitleFilterPipe } from './shared/pipes/title-filter.pipe';
 
 @NgModule({
   declarations: [

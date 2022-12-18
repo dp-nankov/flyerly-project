@@ -7,7 +7,7 @@
         <input type="number" placeholder="Price to:" name [(ngModel)]="searchPriceUp" (change)="search()"
             (input)="search()">
     </div>
-    <app-ad *ngFor="let a of filteredAds" [cdate]="a.created_at" [udate]="a.updatedAt"
+    <app-ad *ngFor="let a of filteredAds | titleFilter: searchTerm" [cdate]="a.created_at" [udate]="a.updatedAt"
         [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price"
         [customId]="a.customId"></app-ad>
     <div class="label">
