@@ -8,4 +8,15 @@
             <a [routerLink]="['/register']"><button>Sign up</button></a>
     </div>
     <p>Already a member? <a [routerLink]="['/login']" class="signin-a">Sign in</a></p>
+    
+</section>
+<section id="recent">
+    <div class="label">
+        <p class="recent-ads-p">Recent Ads:</p>
+        <a [routerLink]="['/ads']" id="see-all">See all</a>
+    </div>
+    <p class="server-error" *ngIf="errorMsg">{{errorMsg}}</p>
+    <app-ad *ngFor="let a of ads" [cdate]="a.created_at" [udate]="a.updatedAt"
+        [title]="a.title" [description]="a.description" [imgUrl]="a.imgUrl" [price]="a.price"
+        [customId]="a.customId"></app-ad>
 </section>

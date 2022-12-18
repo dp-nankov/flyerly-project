@@ -1,7 +1,7 @@
 #home-guest {
     min-height: auto;
     padding-top: 90px;
-    padding-bottom: 122px;
+    padding-bottom: 60px;
 }
 
 .signup-div {
@@ -62,4 +62,30 @@
     font-size: 20px;
     padding: 2.5px 15px;
     margin-left: 10px;
+}
+
+#recent{
+    text-align: center;
+}
+
+#see-all{
+    text-decoration: none;
+    color: #a1ce55;
+    text-shadow: -1px 0 #476f02 0 1px #476f02, 1px 0 #476f02, 0 -1px #476f02;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#see-all:hover {
+    text-decoration: underline;
+    color: #476f02;
+}
+
+.recent-ads-p{
+    margin-bottom: 3px;
+}
+
+.label{
+    margin-bottom: 15px;
 }
