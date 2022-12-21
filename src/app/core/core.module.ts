@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -10,16 +11,17 @@ import { SpinnerComponent } from './spinner/spinner.component';
   declarations: [
     HeaderComponent,
     SpinnerComponent
-    
+
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatMenuModule
   ],
   exports: [
     HeaderComponent,
     SpinnerComponent
-    
+
   ]
 })
 export class CoreModule { }

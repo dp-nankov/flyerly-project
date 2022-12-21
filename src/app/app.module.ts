@@ -17,6 +17,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { TitleFilterPipe } from './shared/pipes/title-filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TitleFilterPipe } from './shared/pipes/title-filter.pipe';
     ReactiveFormsModule,
     RouterModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
     
   ],
   providers: [
