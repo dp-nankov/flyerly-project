@@ -29,12 +29,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        validate: {
-            validator: function (v) {
-                return /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,8}+/g.test(v);
-            },
-            message: props => `${props.value} is invalid email!`
-        }
+        // validate: {
+        //     // validator: function (v) {
+        //     //     return /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,8}+/g.test(v);
+        //     // },
+        //     message: props => `${props.value} is invalid email!`
+        // }
     },
     username: {
         type: String,

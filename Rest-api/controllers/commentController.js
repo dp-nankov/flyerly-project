@@ -10,6 +10,14 @@ function newComment(text, userId, adId) {
         })
 }
 
+
+async function getComments(req, res, next) {
+    const {adId} = req.params;
+    commentModel.find({adId: adId})
+        .then(c => res.json(c))
+        .catch(next);
+}
+
 function getLatestsComments(req, res, next) {
     const limit = Number(req.query.limit) || 0;
 
@@ -26,9 +34,8 @@ function getLatestsComments(req, res, next) {
 function createComment(req, res, next) {
     const { adId } = req.params;
     const { _id: userId } = req.user;
-    const { commentText } = req.body;
-
-    newComment(commentText, userId, adId)
+    const { text } = req.body;
+    newComment(text, userId, adId)
         .then(([_, updatedAd]) => res.status(200).json(updatedAd))
         .catch(next);
 }
@@ -37,6 +44,7 @@ function editComment(req, res, next) {
     const { commentId } = req.params;
     const { commentText } = req.body;
     const { _id: userId } = req.user;
+
 
     // if the userId is not the same as this one of the comment, the comment will not be updated
     commentModel.findOneAndUpdate({ _id: commentId, userId }, { text: commentText }, { new: true })
@@ -88,4 +96,5 @@ module.exports = {
     editComment,
     deleteComment,
     like,
+    getComments
 }

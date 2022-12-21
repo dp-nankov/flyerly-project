@@ -17,10 +17,8 @@ export class AuthActivate implements CanActivate{
             take(1),
             map(user => {
                 const loginRequired = route.data['loginRequired'];
-                console.log(this.authService.isLoggedIn);
         
                 if(loginRequired === undefined || !!user === loginRequired) {return true}
-                console.log(this.authService.isLoggedIn);
                 if(loginRequired === false && this.authService.isLoggedIn === true) {
                     return this.router.createUrlTree(['/ads'])
                 }

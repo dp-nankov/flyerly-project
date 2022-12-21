@@ -6,10 +6,6 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    likes: [{
-        type: ObjectId,
-        ref: "User"
-    }],
     userId: {
         type: ObjectId,
         ref: "User"

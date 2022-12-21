@@ -1,6 +1,7 @@
 const {
     userModel,
-    tokenBlacklistModel
+    tokenBlacklistModel,
+    adModel
 } = require('../models');
 
 const utils = require('../utils');
@@ -13,7 +14,7 @@ const removePassword = (data) => {
 }
 
 function register(req, res, next) {
-    const { firstName, lastName, email, username, password, repeatPassword } = req.body;
+    const { firstName, lastName, email, username, password } = req.body;
 
     return userModel.create({ firstName, lastName, email, username, password })
         .then((createdUser) => {
@@ -92,6 +93,14 @@ function getProfileInfo(req, res, next) {
         .catch(next);
 }
 
+async function myAds(req, res, next) {
+    const { _id: userId } = req.user;
+    
+    adModel.find({userId: userId})
+        .then(ads => res.json(ads))
+        .catch(next);
+}
+
 function editProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
     const { firstName, lastName, username, email } = req.body;
@@ -101,10 +110,19 @@ function editProfileInfo(req, res, next) {
         .catch(next);
 }
 
+function getUser(req, res, next) {
+    const { userId } = req.params;
+    userModel.findById(userId)
+        .then(user => res.json(user))
+        .catch(next);
+}
+
 module.exports = {
     login,
     register,
     logout,
     getProfileInfo,
     editProfileInfo,
+    getUser,
+    myAds
 }

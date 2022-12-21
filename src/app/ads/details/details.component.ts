@@ -49,6 +49,10 @@ export class DetailsComponent implements OnInit {
       }))  
     .subscribe({
       next: (value) => {
+        if(value.length === 0){
+          this.router.navigate(['/404'])
+          return;
+        }
         this.ad = value;
         this.imgUrl = value[0].imgUrl;
         this.title = value[0].title;
