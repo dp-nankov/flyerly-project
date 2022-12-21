@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'flyerly-softuni-project';
+  title = 'flyerly-project';
 
   constructor(public router: Router){
 
